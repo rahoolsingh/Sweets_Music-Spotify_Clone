@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Player from "./Components/Cards/Player";
 import SideBar from "./Components/Panels/SideBar/SideBar";
 import FeedsPanel from "./Components/Panels/FeedsPanel/FeedsPanel";
+import PlayerPanel from "./Components/Panels/PlayerPanel/PlayerPanel";
 
 function App() {
   const [filters, setFilters] = useState([
@@ -58,7 +58,7 @@ function App() {
   ]);
 
   return (
-    <div className="m-auto flex flex-col p-2 w-full h-screen overflow-hidden bg-zinc-300 dark:bg-black dark:text-white">
+    <div className="m-auto flex flex-col lg:p-2 md:p-2 w-full h-screen overflow-hidden bg-zinc-300 dark:bg-black dark:text-white">
       {/* Top Part */}
       <div className="flex overflow-y-hidden gap-2">
         <SideBar filters={filters} yourLibraries={yourLibraries}/>
@@ -66,8 +66,8 @@ function App() {
       </div>
 
       {/* Player Part */}
-      <div className="w-full">
-        <Player />
+      <div className="w-full lg:relative md:relative fixed bottom-1 z-2 bg-black p-2 lg:p-0 md:p-0">
+        <PlayerPanel />
       </div>
     </div>
   );

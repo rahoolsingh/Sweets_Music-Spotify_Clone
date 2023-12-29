@@ -5,7 +5,7 @@ import ActionLabel from "../../Labels/ActionLabel";
 
 function SideBar({ filters, yourLibraries }) {
   return (
-    <div className="lg:w-3/12 md:w-1/3 w-full flex flex-col justify-between">
+    <div className="lg:w-3/12 md:w-1/3 w-full lg:flex md:flex flex-col justify-between hidden">
       <div className="leading-10 py-3 px-8 text-lg bg-zinc-100 dark:bg-zinc-900 rounded-lg">
         <ActionLabel label={"Home"} icon={"home"} />
         <ActionLabel label={"Search"} icon={"search"} />

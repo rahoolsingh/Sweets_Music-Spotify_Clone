@@ -14,13 +14,25 @@ const MusicControl = ({ audioRef }) => {
     setAudioDuration(audioRef.current.duration);
   };
 
+  const updatePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const updatePause = () => {
+    setIsPlaying(false);
+  };
+
   useEffect(() => {
     let audio = audioRef.current;
     audio.addEventListener("timeupdate", updateTime);
     audio.addEventListener("loadedmetadata", updateDuration);
+    audio.addEventListener("pause", updatePause);
+    audio.addEventListener("play", updatePlay);
     return () => {
       audio.removeEventListener("timeupdate", updateTime);
       audio.removeEventListener("loadedmetadata", updateDuration);
+      audio.removeEventListener("pause", updatePause);
+      audio.removeEventListener("play", updatePlay);
     };
   });
 

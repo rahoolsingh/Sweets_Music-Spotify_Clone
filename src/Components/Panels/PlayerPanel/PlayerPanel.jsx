@@ -1,14 +1,16 @@
 import { useRef } from "react";
-import MultiControl from "./MultiControl";
-import PlayControl from "./MusicControl";
-import TwoColCard from "./TwoColCard";
+import TwoColCard from "../../Cards/TwoColCard";
+import MusicControl from "../../Cards/MusicControl";
+import MultiControl from "../../Cards/MultiControl";
 
-function Player() {
+
+
+function PlayerPanel() {
   const src = "https://res.cloudinary.com/djygck7yw/video/upload/v1703837397/Sweets%20Music/Musics/dxpsl9qhwqswgrsurk56.mp3"
   const audioRef = useRef()
   return (
     <div className="flex gap-2 justify-between">
-      <div className="w-3/12 flex items-center justify-center">
+      <div className="lg:w-3/12 lg:flex items-center justify-center hidden">
           <TwoColCard
             main={
               "BEBO | Alfaaz Feat. Yo Yo Honey Singh | Brand New Punjabi Songs 2013"
@@ -24,14 +26,17 @@ function Player() {
 
       {/* Audio Reference */}
       <audio ref={audioRef} src={src} />
-      <div className="w-5/12 overflow-hidden text-ellipsis whitespace-nowrap">
-        <PlayControl audioRef={audioRef}/>
+      <div className="lg:w-5/12 md:w-5/12 w-full overflow-hidden text-ellipsis whitespace-nowrap">
+          <div className="text-center block lg:hidden md:hidden">
+          <marquee className="w-9/12 overflow-hidden">BEBO | Alfaaz Feat. Yo Yo Honey Singh | Brand New Punjabi Songs 2013</marquee>
+          </div>
+        <MusicControl audioRef={audioRef}/>
       </div>
-      <div className="w-3/12 flex justify-end items-center">
+      <div className="w-3/12 lg:flex md:flex justify-end items-center hidden">
         <MultiControl audioRef={audioRef}/>
       </div>
     </div>
   );
 }
 
-export default Player;
+export default PlayerPanel;
