@@ -1,8 +1,4 @@
-# React + Vite
+This ia a spotify clone project 'Sweets Music', working on it to make it fully responsive and feature rich. All the feature should be working on Desktop and Mobile Devices. I will be intigrating my own backend to server music to this in future.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the first draft.
+I'll be updating this as we progress further.
